@@ -10,9 +10,10 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:id", (req, res) => {
-  const note = data.find((x) => x._id === Number(req.params.id));
+  const note = data.find((x) => x._id === req.params.id);
   console.log(req.params);
   res.send(note);
 });
 const port = process.env.PORT || 5000;
+
 app.listen(port, console.log(` server is reunning  ${port}`));
