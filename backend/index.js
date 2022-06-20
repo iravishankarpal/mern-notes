@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const path = require("path");
 var port = process.env.port;
+
 app.listen(port, console.log(`server is  running ${port}`));
 
 // --------------------------deployment------------------------------
@@ -28,15 +29,15 @@ app.use(moargan("dev"));
 var cors = require("cors");
 app.use(cors());
 // fetching all notes
-var notes = require("./Data");
-app.get("/allNotes", (req, res) => {
-  res.send(notes);
-});
-// fetchin only one notes
-app.get("/note/:id", (req, res) => {
-  var note = notes.filter((x) => req.params.id === x._id);
-  res.send(note);
-});
+// var notes = require("./Data");
+// app.get("/allNotes", (req, res) => {
+//   res.send(notes);
+// });
+// // fetchin only one notes
+// app.get("/note/:id", (req, res) => {
+//   var note = notes.filter((x) => req.params.id === x._id);
+//   res.send(note);
+// });
 
 // connection of database
 const connectionDB = require("./dbConnection");
