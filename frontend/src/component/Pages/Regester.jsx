@@ -38,7 +38,7 @@ function Regester() {
       });
     } else {
       await axios
-        .post("/api/users/userRegister", { name, email, password })
+        .post("/user/Register", { name, email, password })
         .then((data) => {
           if (data.data.status === 400) {
             seterror({ status: true, message: data.data.message });

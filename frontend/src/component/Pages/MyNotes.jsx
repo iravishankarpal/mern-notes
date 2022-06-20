@@ -30,7 +30,10 @@ const CardBody = styled.div`
 `;
 
 function MyNotes() {
-  const [notes, setNotes] = React.useState([]);
+  const [notes, setNotes] = React.useState([
+    // { name: "", category: "", title: "", updatedAt: "xTx", _id: "s" },
+    // { name: "", category: "", title: "", updatedAt: "xTx", _id: "s" },
+  ]);
   var config = {
     headers: {
       authorization: `Bearer ${
@@ -40,16 +43,19 @@ function MyNotes() {
   };
   const fetchNotes = async () => {
     await axios
-      .get("/user/note/all", config)
+      .get("/notes/all", config)
       // .then((data) => console.log(data.data))
-      .then((data) => setNotes(data.data))
+      .then((data) => {
+        setNotes(data.data);
+        // console.log("data :", data);
+      })
       .catch((error) => console.log(error));
   };
   useEffect(() => {
     fetchNotes();
   }, []);
   const handleDelete = async (id) => {
-    await axios.delete(`/user/note/${id}`, config).then(() => fetchNotes());
+    await axios.delete(`/notes/${id}`, config).then(() => fetchNotes());
   };
   return (
     <PageFormat title={"MyNotes"}>

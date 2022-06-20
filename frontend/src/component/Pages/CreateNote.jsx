@@ -35,7 +35,7 @@ function CreateNote() {
     };
 
     await axios
-      .post(`/user/note/create`, { title, content, category }, config)
+      .post(`/notes/create`, { title, content, category }, config)
       .then((res) => {
         if (res.data.status === 400) {
           // console.log("res :", res);

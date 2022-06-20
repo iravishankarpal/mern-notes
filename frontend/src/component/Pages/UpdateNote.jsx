@@ -27,7 +27,7 @@ function UpdateNote() {
   useEffect(() => {
     // console.log("id :", id);
     const fetching = async () => {
-      axios.get(`/user/note/${id}`, config).then((data) => {
+      axios.get(`/notes/${id}`, config).then((data) => {
         setTitle(data.data.title);
         setContent(data.data.content);
         setCategory(data.data.category);
@@ -39,11 +39,12 @@ function UpdateNote() {
 
   const updateHandler = async (e) => {
     e.preventDefault();
+    // setLoding(true);
     if (!title || !content || !category === null) {
       seterror({ state: true, message: "field cannot be empty" });
     } else {
       await axios
-        .put(`/user/note/${id}`, { title, content, category }, config)
+        .put(`/notes/${id}`, { title, content, category }, config)
         .then((res) => {
           if (res.data.status === 400) {
             // console.log("res :", res);

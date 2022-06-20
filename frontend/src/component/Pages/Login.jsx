@@ -30,7 +30,7 @@ function Login() {
   const handleLoginSubmit = async () => {
     setLoding(true);
     await axios
-      .post("/api/users/", {
+      .post("/user/", {
         email: Email,
         password: Password,
       })

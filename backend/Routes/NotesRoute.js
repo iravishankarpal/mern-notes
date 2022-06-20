@@ -8,10 +8,10 @@ const DeleteNote = require("../RoutesControllers/DeleteNote");
 
 const NotesRoute = express.Router();
 
-NotesRoute.route("/note/all").get(protect, AllNotes);
+NotesRoute.route("/all").get(protect, AllNotes);
 
-NotesRoute.route("/note/create").post(protect, CreateNote);
-NotesRoute.route("/note/:id")
+NotesRoute.route("/create").post(protect, CreateNote);
+NotesRoute.route("/:id")
   .get(protect, GetSingleNote)
   .put(protect, UpDateNote)
   .delete(protect, DeleteNote);

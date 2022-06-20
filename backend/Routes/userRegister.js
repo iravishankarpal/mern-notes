@@ -4,7 +4,7 @@ const {
   userRegisterHandler,
 } = require("../RoutesControllers/handleUserRegistration");
 const userLoginHandler = require("../RoutesControllers/handleUserLogin");
-backendRoutes.route("/userRegister").post(userRegisterHandler);
+backendRoutes.route("/Register").post(userRegisterHandler);
 
 backendRoutes.route("/").post(userLoginHandler);
 
