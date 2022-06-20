@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
-
+C:\Program Files\MongoDB\Server\5.0\data\
+C:\Program Files\MongoDB\Server\5.0\log\
 ### `yarn start`
 
 Runs the app in the development mode.\

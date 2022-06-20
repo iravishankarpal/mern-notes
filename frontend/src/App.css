@@ -3,10 +3,20 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.App {
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+*:hover,
+*:focus,
+* {
+  outline: none !important ;
 }
+Link,
+a,
+a:hover {
+  text-decoration: none !important;
+  color: initial !important;
+}
+Button :focus,
+Button:hover {
+  outline: none !important;
+  border: none !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
