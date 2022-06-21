@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const path = require("path");
-var port = process.env.port || 8080;
-
+var port = process.env.PORT || 8080;
 app.listen(port, console.log(`server is  running ${port}`));
 
 // --------------------------deployment------------------------------
