@@ -94,6 +94,8 @@ function CreateNote() {
                 onChange={(e) => setCategory(e.target.value)}
               />
             </Form.Group>
+            <br className="my-2" />
+
             {Loding && <Lodingspinner />}
             <Button type="submit" variant="primary">
               Create Note

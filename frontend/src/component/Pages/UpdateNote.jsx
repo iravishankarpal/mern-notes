@@ -12,7 +12,7 @@ function UpdateNote() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
-  const [Loding, setLoding] = useState(false);
+  const [Loding] = useState(false);
   // const [date, setDate] = useState(null);/
   const [error, seterror] = useState({ state: false, message: null });
   const config = {
@@ -24,7 +24,7 @@ function UpdateNote() {
       }`,
     },
   };
-  useEffect(() => {
+  useEffect((id, config) => {
     // console.log("id :", id);
     const fetching = async () => {
       axios.get(`/notes/${id}`, config).then((data) => {
@@ -121,6 +121,8 @@ function UpdateNote() {
               />
             </Form.Group>
             {/* {loading && <Loading size={50} />} */}
+            <br className="my-2" />
+
             <Button
               variant="primary"
               type="submit"

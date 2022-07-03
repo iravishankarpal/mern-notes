@@ -51,9 +51,10 @@ function MyNotes() {
       })
       .catch((error) => console.log(error));
   };
+
   useEffect(() => {
     fetchNotes();
-  }, []);
+  }, [fetchNotes]);
   const handleDelete = async (id) => {
     await axios.delete(`/notes/${id}`, config).then(() => fetchNotes());
   };
@@ -63,9 +64,10 @@ function MyNotes() {
         <Link to="/CreateNote" className="px-3 py-2 my-8 bg-primary text-light">
           Create a New Note
         </Link>
-        {notes.map((x) => {
+        <br className="my-2" />
+        {notes.reverse().map((x) => {
           return (
-            <Accordion className="py-1" key={x._id}>
+            <Accordion className="py-1 " key={x._id}>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>
                   <SubCArd>
